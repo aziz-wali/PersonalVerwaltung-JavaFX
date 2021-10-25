@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <AnchorPane layoutX="-2.0" layoutY="-1.0" prefHeight="517.0" prefWidth="158.0" style="-fx-background-color: #34495e;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <Label layoutX="51.0" layoutY="72.0" text="Dashboard" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="101.0" text="Firma Struktur" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="161.0" text="Clients" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="193.0" text="Überstunden" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="259.0" text="Abteilungen" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="131.0" text="Projekte" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="296.0" text="Sonstiges" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="345.0" text="System" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="386.0" text="Admins" textFill="WHITE" />
+            <Label layoutX="51.0" layoutY="428.0" text="Ausloggen" textFill="WHITE" />
+            <Line endX="39.0" layoutX="94.0" layoutY="328.0" startX="-100.0" stroke="#fcfcfc" />
+            <Button fx:id="Mitarbeiter" layoutX="48.0" layoutY="221.0" mnemonicParsing="false" onAction="#mitarbeiter" style="-fx-background-color: #34495e;" text="Mitarbeiter" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="154.0" layoutY="1.0" prefHeight="52.0" prefWidth="619.0" style="-fx-background-color: #34495e;" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="-4.0" />
+      <Label layoutX="428.0" layoutY="81.0" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="271.0" layoutY="139.0" prefHeight="94.0" prefWidth="200.0" style="-fx-background-color: #2ecc71;">
+         <children>
+            <Label layoutX="64.0" layoutY="39.0" text="Mitarbeiter" textFill="#fcfcfc" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="531.0" layoutY="280.0" prefHeight="94.0" prefWidth="200.0" style="-fx-background-color: #9b59b6;">
+         <children>
+            <Label layoutX="68.0" layoutY="39.0" text="Abteilungen" textFill="#f2efef" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="271.0" layoutY="280.0" prefHeight="94.0" prefWidth="200.0" style="-fx-background-color: #3498db;">
+         <children>
+            <Label layoutX="61.0" layoutY="38.0" text="Projekte" textFill="#eeeeee" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="531.0" layoutY="139.0" prefHeight="94.0" prefWidth="200.0" style="-fx-background-color: #e74c3c;">
+         <children>
+            <Label layoutX="62.0" layoutY="38.0" text="Clients" textFill="#f2efef" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

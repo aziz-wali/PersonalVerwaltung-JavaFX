@@ -20,15 +20,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 
 
-public class MainController  implements Initializable {
+public class MainController extends Router  implements Initializable {
 	
  
     @FXML
@@ -69,17 +66,22 @@ public class MainController  implements Initializable {
     
     @FXML
 	  private Button loginBtn;
+    @FXML
+    private TextField txtemail;
+
+    @FXML
+    private TextField txttelefon;
+  
+    @FXML
+    private TextField txtname;
 
     @FXML
     private Button sc;
-   
-    @FXML
-    private AnchorPane toscene;
     
     @FXML
-    private AnchorPane scene2;
+    private Button edit;
     
-    private Stage primaryStage;
+  
     int index;
     Connection connection =null;
 	Statement stmt = null;
@@ -112,33 +114,14 @@ public class MainController  implements Initializable {
 		 }
 		 @FXML
 		 public void home() {
-				
-					
-					Stage primaryStage = null;
-					primaryStage =(Stage) loginBtn.getScene().getWindow();
-					Parent root;
-					try {
-						root = FXMLLoader.load(getClass().getResource("resources/Home.fxml"));
-					    primaryStage.setScene(new Scene(root));
-				        primaryStage.show();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+
+			 toScene(loginBtn,"resources/Home.fxml");
 			 }
+		 
 		 @FXML
 		 void addPerson() {
-				
-				primaryStage =(Stage) sc.getScene().getWindow();
-				Parent root;
-				try {
-					root = FXMLLoader.load(getClass().getResource("resources/AddUser.fxml"));
-				    primaryStage.setScene(new Scene(root));
-			        primaryStage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+		
+			 toScene(sc,"resources/AddUser.fxml");
 		 }
 		 
 		@FXML
@@ -157,17 +140,9 @@ public class MainController  implements Initializable {
 	    
 	    @FXML
 	    void edit() throws SQLException {
-	    	addPerson();
-           String sql="insert into info(vorname,name,email,alt,addresse,telefon)values(?,?,?,?,?,?)";
-			try(Connection connection = SqlConnection.conn();
-					Statement stmt = connection.createStatement()) {
-				 ResultSet r= stmt.executeQuery("select * from info where vorname=?");
-				r.updateString(1,txtMember.getText());
-				txtAge.setText(r.getString("alt"));
-				  //pst.setString(4,tel.getText());
-				
-			      JOptionPane.showMessageDialog(null, "Users Add succes");
-			}
+	    	
+	    	toScene(edit,"resources/EditUser.fxml");
+	    	
 	    }
 	    
 	    @FXML
@@ -194,11 +169,11 @@ public class MainController  implements Initializable {
 		try {
 			table();
 			table.setEditable(true);
-		
+			vorname.setCellFactory(TextFieldTableCell.forTableColumn());
 			name.setCellFactory(TextFieldTableCell.forTableColumn());
 			email.setCellFactory(TextFieldTableCell.forTableColumn());
 			alt.setCellFactory(TextFieldTableCell.forTableColumn());
-			//telefon.setCellFactory(TextFieldTableCell.forTableColumn());
+			telefon.setCellFactory(TextFieldTableCell.forTableColumn());
 			addresse.setCellFactory(TextFieldTableCell.forTableColumn());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

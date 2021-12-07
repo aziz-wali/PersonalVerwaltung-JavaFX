@@ -69,7 +69,7 @@ public class SceneController {
 	    	Parent root;
 			primaryStage =(Stage) start.getScene().getWindow();
 			try {
-				root = FXMLLoader.load(getClass().getResource("resources/javaFxCRUD.fxml"));
+				root = FXMLLoader.load(getClass().getResource("resources/Mitarbeiter.fxml"));
 				 primaryStage.setScene(new Scene(root, 1000, 400));
 			        primaryStage.show();
 			} catch (IOException e) {
